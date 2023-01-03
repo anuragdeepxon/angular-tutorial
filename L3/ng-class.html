@@ -1,0 +1,33 @@
+<!-- NgClass is a directive in Angular that allows you to dynamically set CSS classes on an element based on the component's state.
+
+To use NgClass, you first need to import it in your component: -->
+
+
+<script>
+  import { NgClass } from '@angular/common';
+</script>
+<!-- Then, you can use the NgClass directive in your template to bind an object of CSS classes to an element. The keys of the object represent the CSS class names, and the values are either true or false, indicating whether or not the class should be applied to the element.
+
+Here is an example of how you can use NgClass to apply CSS classes based on a component's isLoading property: -->
+
+
+<div [ngClass]="{'loading': isLoading}">
+  This element will have the 'loading' class applied when isLoading is true.
+</div>
+<!-- You can also use NgClass to bind an object of CSS classes to an element, where the keys are CSS class names and the values are expressions that evaluate to true or false.
+
+Here is an example of how you can use NgClass to apply CSS classes based on a component's isValid property: -->
+
+
+<div [ngClass]="{'valid': isValid, 'invalid': !isValid}">
+  This element will have the 'valid' class applied when isValid is true and the 'invalid' class applied when isValid is
+  false.
+</div>
+<!-- You can also use NgClass to bind an array of CSS class names to an element. The classes in the array will be applied to the element if they are not already present, and will be removed if they are present.
+
+Here is an example of how you can use NgClass to toggle CSS classes based on a component's isHighlighted property: -->
+
+<div [ngClass]="['highlighted', 'faded']" [class.selected]="isHighlighted">
+  This element will have the 'highlighted' and 'faded' classes applied when isHighlighted is false, and will have the
+  'selected' class applied when isHighlighted is true.
+</div>
